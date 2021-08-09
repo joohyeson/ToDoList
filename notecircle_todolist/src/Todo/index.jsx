@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import "./Todo.css";
 
@@ -17,6 +17,8 @@ function Todo(props) {
     line5,
     text2,
   } = props;
+
+  let [메모, 메모변경] = useState(['안녕하세요', '메모1', '바보바보']);
 
   return (
     <div className="container-center-horizontal">
@@ -44,10 +46,14 @@ function Todo(props) {
           </div>
           <div className="text-1 leaguegothic-regular-normal-white-64px">{text1}</div>
         </div>
+
         <Container>
-          <Row>
-            <Col><테이블내용 text={text} src={line5} /></Col>
-            <Col><테이블내용 text={text} src={line5} /></Col>
+          <Row xs={1} md={2}>
+            {
+              메모.map(function (object, index) {
+                return <Col><테이블내용 text={메모[index]} src={line5} /></Col>
+              })
+            }
           </Row>
         </Container>
 

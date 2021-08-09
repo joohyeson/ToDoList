@@ -7,7 +7,7 @@
   width: 100%;
 }
 
-.navbar {
+.navbar_m {
   align-items: flex-end;
   background-color: var(--jacarta);
   display: flex;

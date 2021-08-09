@@ -14,6 +14,7 @@
   height: 127px;
   width: 100%;
   min-width: 720px;
+  
 }
 
 .todo {
@@ -131,6 +132,7 @@
 }
 
 .line-5 {
+  background-color: #eeeeee;
   height: 4px;
   margin-left: -1.0px;
   margin-top: 17px;
@@ -141,8 +143,9 @@
   align-items: flex-start;
   align-self: flex-end;
   display: flex;
+  position: fixed;
   margin-right: 43px;
-  margin-top: 640px;
+  margin-top: 740px;
   min-width: 98px;
 }
 

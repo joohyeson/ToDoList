@@ -19,6 +19,17 @@ function Todo(props) {
   } = props;
 
   let [메모, 메모변경] = useState(['안녕하세요', '메모1', '바보바보']);
+  let [메모추가플래그, 메모추가플래그변경] = useState(true);
+
+  let [메모내용, 메모내용변경] = useState('');
+
+  function 메모추가() {
+    let temp = [...메모];
+    temp.push(메모내용);
+    메모변경(temp);
+
+    console.log(메모);
+  }
 
   return (
     <div className="container-center-horizontal">
@@ -57,11 +68,26 @@ function Todo(props) {
           </Row>
         </Container>
 
-        <div className="addbutton">
+        <div className="addbutton" onClick={() => { 메모추가플래그변경(!메모추가플래그) }}>
           <div className="overlap-group4">
             <div className="text-2 valign-text-middle leaguegothic-regular-normal-white-64px">{text2}</div>
           </div>
         </div>
+
+        {
+          메모추가플래그 === false
+            ? (
+              <>
+                <input className="addtext" value={메모내용} onChange={(e) => {
+                  메모내용변경(e.target.value);
+                }} />
+                <button className="addtext_button" onClick={() => { 메모추가(); 메모내용변경(''); 메모추가플래그변경(true) }}>Add</button>
+              </>
+            )
+            : null
+        }
+
+
       </div>
 
     </div >

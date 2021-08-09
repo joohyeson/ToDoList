@@ -167,6 +167,32 @@
   text-align: center;
 }
 
+.addtext {
+  background-color: #d1c9c9;
+  border-radius: 6px;
+  border-color: #eeeeee;
+  height: 94px;
+  width: 1184px;
+  align-self: flex-end;
+  position: fixed;
+  margin-right: 203px;
+  margin-top: 740px;
+  min-width: 98px;
+}
+.addtext_button{
+  background-color: #d1c9c9;
+ 
+  border-color: #eeeeee;
+  height: 93px;
+  width: 104px;
+  align-self: flex-end;
+  position: fixed;
+  margin-right: 203px;
+  margin-top: 740px;
+  min-width: 98px;
+}
+
+
 
 @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
 

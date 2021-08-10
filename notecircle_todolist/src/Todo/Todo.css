@@ -197,6 +197,14 @@
 
 }
 
+.deleteButton{
+  color: rgb(255, 255, 255) ;
+}
+
+.deleteButton:hover{
+  color: var(--jacarta) ;
+}
+
 @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
 
 @import url("https://fonts.googleapis.com/css?family=Lato:400");

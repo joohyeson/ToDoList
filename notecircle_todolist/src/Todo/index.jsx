@@ -30,7 +30,10 @@ function Todo(props) {
           <Row xs={1} md={2}>
             {
               메모.map(function (object, index) {
-                return <Col><테이블내용 text={메모[index]} src={line5} /></Col>
+                return (
+                  <Col>
+                    <테이블내용 text={메모[index]} src={line5} />
+                  </Col>)
               })
             }
           </Row>
@@ -101,11 +104,13 @@ function Navbar_todo(props) {
 }
 
 function 테이블내용(props) {
+
   return (
     <div className="todotext">
       <div className="flex-row">
         <div className="rectangle-10"></div>
         <div className="text valign-text-middle lato-normal-jacarta-18px">{props.text}</div>
+        <div><p className="deleteButton">X</p></div>
       </div>
       <img className="line-5" src={props.src} />
     </div>

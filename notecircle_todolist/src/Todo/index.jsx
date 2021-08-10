@@ -4,23 +4,12 @@ import "./Todo.css";
 
 function Todo(props) {
   const {
-    overlapGroup,
-    todo,
-    overlapGroup1,
-    routine,
-    overlapGroup2,
-    event,
-    overlapGroup3,
-    checklist,
-    text1,
-    text,
     line5,
     text2,
   } = props;
 
   let [메모, 메모변경] = useState(['안녕하세요', '메모1', '바보바보']);
   let [메모추가플래그, 메모추가플래그변경] = useState(true);
-
   let [메모내용, 메모내용변경] = useState('');
 
   function 메모추가() {
@@ -34,29 +23,8 @@ function Todo(props) {
   return (
     <div className="container-center-horizontal">
       <div className="mein-hwamyeon-todo screen">
-        <div className="navbar_m">
-          <div className="todo">
-            <div className="overlap-group" style={{ backgroundImage: `url(${overlapGroup})` }}>
-              <div className="todo-1 valign-text-middle lato-normal-jacarta-18px">{todo}</div>
-            </div>
-          </div>
-          <div className="navbar-item">
-            <div className="overlap-group1" style={{ backgroundImage: `url(${overlapGroup1})` }}>
-              <div className="routine lato-normal-jacarta-18px">{routine}</div>
-            </div>
-          </div>
-          <div className="navbar-item">
-            <div className="overlap-group2" style={{ backgroundImage: `url(${overlapGroup2})` }}>
-              <div className="event lato-normal-jacarta-18px">{event}</div>
-            </div>
-          </div>
-          <div className="navbar-item">
-            <div className="overlap-group3" style={{ backgroundImage: `url(${overlapGroup3})` }}>
-              <div className="checklist lato-normal-jacarta-18px">{checklist}</div>
-            </div>
-          </div>
-          <div className="text-1 leaguegothic-regular-normal-white-64px">{text1}</div>
-        </div>
+
+        <Navbar_todo {...props} />
 
         <Container>
           <Row xs={1} md={2}>
@@ -78,20 +46,58 @@ function Todo(props) {
           메모추가플래그 === false
             ? (
               <>
-                <input className="addtext" value={메모내용} onChange={(e) => {
+                <button class="btn btn-outline-secondary leaguegothic-regular-normal-white-64px" type="button" id="button-addon1" onClick={() => { 메모추가(); 메모내용변경(''); 메모추가플래그변경(true) }}>Add</button>
+                <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1" value={메모내용} onChange={(e) => {
                   메모내용변경(e.target.value);
                 }} />
-                <button className="addtext_button" onClick={() => { 메모추가(); 메모내용변경(''); 메모추가플래그변경(true) }}>Add</button>
               </>
             )
             : null
         }
-
-
       </div>
-
     </div >
   );
+}
+
+function Navbar_todo(props) {
+
+  const {
+    overlapGroup,
+    todo,
+    overlapGroup1,
+    routine,
+    overlapGroup2,
+    event,
+    overlapGroup3,
+    checklist,
+    text1,
+  } = props;
+
+  return (
+    <div className="navbar_m">
+      <div className="todo">
+        <div className="overlap-group" style={{ backgroundImage: `url(${overlapGroup})` }}>
+          <div className="todo-1 valign-text-middle lato-normal-jacarta-18px">{todo}</div>
+        </div>
+      </div>
+      <div className="navbar-item">
+        <div className="overlap-group1" style={{ backgroundImage: `url(${overlapGroup1})` }}>
+          <div className="routine lato-normal-jacarta-18px">{routine}</div>
+        </div>
+      </div>
+      <div className="navbar-item">
+        <div className="overlap-group2" style={{ backgroundImage: `url(${overlapGroup2})` }}>
+          <div className="event lato-normal-jacarta-18px">{event}</div>
+        </div>
+      </div>
+      <div className="navbar-item">
+        <div className="overlap-group3" style={{ backgroundImage: `url(${overlapGroup3})` }}>
+          <div className="checklist lato-normal-jacarta-18px">{checklist}</div>
+        </div>
+      </div>
+      <div className="text-1 leaguegothic-regular-normal-white-64px">{text1}</div>
+    </div>
+  )
 }
 
 function 테이블내용(props) {

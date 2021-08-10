@@ -167,32 +167,35 @@
   text-align: center;
 }
 
-.addtext {
-  background-color: #d1c9c9;
+.form-control {
+  background-color: rgba(241, 241, 241, 0.856);
   border-radius: 6px;
   border-color: #eeeeee;
   height: 94px;
   width: 1184px;
   align-self: flex-end;
   position: fixed;
-  margin-right: 203px;
+  margin-right: 305px;
   margin-top: 740px;
   min-width: 98px;
 }
-.addtext_button{
-  background-color: #d1c9c9;
- 
+.btn:hover{
+  background-color:var(--jacarta) ;
+}
+.btn{
+  
+  background-color: rgb(209, 209, 209) ;
   border-color: #eeeeee;
   height: 93px;
   width: 104px;
   align-self: flex-end;
+  text-align:center;
   position: fixed;
   margin-right: 203px;
   margin-top: 740px;
   min-width: 98px;
+
 }
-
-
 
 @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
 

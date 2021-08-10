@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import "./Todo.css";
+import Clock from "react-live-clock";
+
 
 function Todo(props) {
   const {
@@ -98,7 +100,9 @@ function Navbar_todo(props) {
           <div className="checklist lato-normal-jacarta-18px">{checklist}</div>
         </div>
       </div>
-      <div className="text-1 leaguegothic-regular-normal-white-64px">{text1}</div>
+      <div className="text-1 leaguegothic-regular-normal-white-64px">
+        <Clock format={"YYYY.MM.DD"} ticking={true} timezone={"KR/ Pacific"} />
+      </div>
     </div>
   )
 }

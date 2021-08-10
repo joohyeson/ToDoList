@@ -105,12 +105,14 @@ function Navbar_todo(props) {
 
 function 테이블내용(props) {
 
+
+  let [삭제버튼, 삭제버튼변경] = useState(true);
   return (
-    <div className="todotext">
-      <div className="flex-row">
-        <div className="rectangle-10"></div>
-        <div className="text valign-text-middle lato-normal-jacarta-18px">{props.text}</div>
-        <div><p className="deleteButton">X</p></div>
+    <div className="todotext" onMouseOver={() => { 삭제버튼변경(false); }} onMouseOut={() => { 삭제버튼변경(true); }}>
+      <div className="flex-row" >
+        <div className="rectangle-10" ></div>
+        <div className="text valign-text-middle lato-normal-jacarta-18px" >{props.text}</div>
+        <div><p className="deleteButton" hidden={삭제버튼} >X</p></div>
       </div>
       <img className="line-5" src={props.src} />
     </div>

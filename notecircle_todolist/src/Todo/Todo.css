@@ -179,6 +179,7 @@
   margin-top: 740px;
   min-width: 98px;
 }
+
 .btn:hover{
   background-color:var(--jacarta) ;
 }
@@ -197,11 +198,11 @@
 
 }
 
-.deleteButton{
+/* .deleteButton:hover{
   color: rgb(255, 255, 255) ;
-}
+} */
 
-.deleteButton:hover{
+.deleteButton{
   color: var(--jacarta) ;
 }
 

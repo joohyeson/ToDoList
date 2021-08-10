@@ -78,6 +78,15 @@ function Navbar_todo(props) {
     text1,
   } = props;
 
+  let today = new Date();
+
+  let year = today.getFullYear(); // 년도
+  let month = today.getMonth() + 1;  // 월
+  let date = today.getDate();  // 날짜
+  let day = today.getDay();  // 요일
+
+  let dayArray = ['일', '월', '화', '수', '목', '금', '토'];
+
   return (
     <div className="navbar_m">
       <div className="todo">
@@ -101,7 +110,7 @@ function Navbar_todo(props) {
         </div>
       </div>
       <div className="text-1 leaguegothic-regular-normal-white-64px">
-        <Clock format={"YYYY.MM.DD"} ticking={true} timezone={"KR/ Pacific"} />
+        <p>{year}.{month}.{date}.({dayArray[day]})</p>
       </div>
     </div>
   )

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import "./Todo.css";
-import Clock from "react-live-clock";
 
 
 function Todo(props) {
@@ -120,11 +119,33 @@ function 테이블내용(props) {
 
 
   let [삭제버튼, 삭제버튼변경] = useState(true);
+  let [체크박스, 체크박스변경] = useState(false);
+  let style = {
+    textDecoration: 'line-through',
+    color: '#b4afaf',
+    borderColor: '#b4afaf'
+
+  }
   return (
     <div className="todotext" onMouseOver={() => { 삭제버튼변경(false); }} onMouseOut={() => { 삭제버튼변경(true); }}>
       <div className="flex-row" >
-        <div className="rectangle-10" ></div>
-        <div className="text valign-text-middle lato-normal-jacarta-18px" >{props.text}</div>
+        {
+          체크박스 === true
+            ? (<div className="rectangle-10" style={style} onClick={() => {
+              체크박스변경(!체크박스)
+            }}>✔</div>)
+            : (<div className="rectangle-10" onClick={() => {
+              체크박스변경(!체크박스)
+            }}></div>)
+        }
+
+        {
+          체크박스 === true
+            ? (<div className="text valign-text-middle lato-normal-jacarta-18px" style={style}>{props.text}</div>)
+            : (<div className="text valign-text-middle lato-normal-jacarta-18px" >{props.text}</div>)
+        }
+
+
         <div className="deleteButton" hidden={삭제버튼} onClick={() => {
           let tempArray = props.memoArray.filter((memo) => { return memo !== props.text; })
           console.log(tempArray);

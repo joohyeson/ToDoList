@@ -121,6 +121,9 @@
   border-radius: 1px;
   height: 38px;
   width: 38px;
+  text-align: center;
+  line-height: 38px;/*텍스트 세로 가운데 정렬(height값과 동일해야함)*/
+  
 }
 
 .text {

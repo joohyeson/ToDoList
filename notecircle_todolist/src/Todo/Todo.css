@@ -132,6 +132,15 @@
   margin-left: 53px;
   text-align: left;
   width: 330px;
+  position:relative;
+}
+
+
+.updateBox{
+  position:absolute;
+  background-color: white;
+  margin-left: 80px;
+  text-align: left;
 }
 
 .line-5 {
@@ -201,12 +210,35 @@
 
 }
 
+.btn:hover{
+  background-color:var(--jacarta) ;
+}
+.btn{
+  
+  background-color: rgb(209, 209, 209) ;
+  border-color: #eeeeee;
+  height: 93px;
+  width: 104px;
+  align-self: flex-end;
+  text-align:center;
+  position: fixed;
+  margin-right: 203px;
+  margin-top: 740px;
+  min-width: 98px;
+
+}
+
+
 /* .deleteButton:hover{
   color: rgb(255, 255, 255) ;
 } */
 
 .deleteButton{
   color: var(--jacarta) ;
+}
+
+.changeButton{
+  margin-right: 10px;
 }
 
 @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");

@@ -33,7 +33,7 @@ function Todo(props) {
               메모.map(function (object, index) {
                 return (
                   <Col>
-                    <테이블내용 text={메모[index]} src={line5} memoArray={메모} 메모변경={메모변경} />
+                    <테이블내용 text={메모[index]} src={line5} memoArray={메모} 메모변경={메모변경} index={index} />
                   </Col>)
               })
             }
@@ -120,6 +120,9 @@ function 테이블내용(props) {
 
   let [삭제버튼, 삭제버튼변경] = useState(true);
   let [체크박스, 체크박스변경] = useState(false);
+  let [수정박스, 수정박스변경] = useState(true);
+  let [수정텍스트, 수정텍스트변경] = useState(props.text);
+
   let style = {
     textDecoration: 'line-through',
     color: '#b4afaf',
@@ -142,8 +145,24 @@ function 테이블내용(props) {
         {
           체크박스 === true
             ? (<div className="text valign-text-middle lato-normal-jacarta-18px" style={style}>{props.text}</div>)
-            : (<div className="text valign-text-middle lato-normal-jacarta-18px" >{props.text}</div>)
+            : (
+              <div className="text valign-text-middle lato-normal-jacarta-18px">{props.text}
+              </div>)
         }
+
+        <div className="changeButton" onClick={() => {
+          수정박스변경(!수정박스);
+        }}>✌</div>
+        <input type="text" className="updateBox" hidden={수정박스} value={수정텍스트} onChange={
+          (e) => {
+            수정텍스트변경(e.target.value);
+            let temp = [...props.memoArray];
+            let element = [...props.memoArray[props.index]];
+            element = 수정텍스트;
+            temp[props.index] = element;
+            props.메모변경(temp);
+          }
+        }></input>
 
 
         <div className="deleteButton" hidden={삭제버튼} onClick={() => {

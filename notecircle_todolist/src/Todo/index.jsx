@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import "./Todo.css";
 
-
 function Todo(props) {
   const {
     line5,
@@ -150,9 +149,9 @@ function 테이블내용(props) {
               </div>)
         }
 
-        <div className="changeButton" onClick={() => {
+        <div className="changeButton" hidden={삭제버튼} onClick={() => {
           수정박스변경(!수정박스);
-        }}>✌</div>
+        }}>🔧</div>
         <input type="text" className="updateBox" hidden={수정박스} value={수정텍스트} onChange={
           (e) => {
             수정텍스트변경(e.target.value);
@@ -169,7 +168,7 @@ function 테이블내용(props) {
           let tempArray = props.memoArray.filter((memo) => { return memo !== props.text; })
           console.log(tempArray);
           props.메모변경(tempArray);
-        }}>X</div>
+        }}>✖</div>
       </div>
       <img className="line-5" src={props.src} />
     </div>
